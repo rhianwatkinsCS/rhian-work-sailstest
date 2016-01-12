@@ -6,7 +6,8 @@ var cache = {data: null, timestamp: -1};
 
 module.exports = {
   GetStarWarsApi: (body) => {
-    if (process.env.RHIAN_JUST_MESSING_ABOUT2) {
+    if (process.env.RHIAN_JUST_MESSING_ABOUT) {
+      var1;
       swroot = (body.swroot) ? body.swroot : "people";
       swid = (body.swid) ? body.swid : "";
       return axios.get("http://swapi.co/api/"+swroot+"/"+swid)

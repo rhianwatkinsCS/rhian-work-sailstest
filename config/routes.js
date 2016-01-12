@@ -35,7 +35,7 @@ module.exports.routes = {
   'get /getweather' : 'weatherController.GetWeather',
   'get /play' : 'playController.Play',
   'get /starWars' : 'starWarsApiController.GetStarWarsApi',
-  'post /starWars' : 'starWarsApiController.GetStarWarsApi',
+  'post /starWars' : 'starWarsApiController.GetStarWarsApi'
   // 'get /ping' : 'indexController.index',
   // 'get /log' : 'indexController.log',
   // 'get /ftplog' : 'indexController.ftplog'

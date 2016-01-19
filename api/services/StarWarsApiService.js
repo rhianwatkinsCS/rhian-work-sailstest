@@ -6,20 +6,16 @@ var cache = {data: null, timestamp: -1};
 
 module.exports = {
   GetStarWarsApi: (body) => {
-    if (process.env.RHIAN_JUST_MESSING_ABOUT) {
-      //sdfghjk
-      if (body) {
-          swroot = (body.swroot) ? body.swroot : "people";
-          swid = (body.swid) ? body.swid : "";
-        return axios.get("http://swapi.co/api/"+swroot+"/"+swid)
-        .then(r => {
-          cache.data = r;
-          cache.timestamp = (new Date).getTime();
-          return r;
-        })
-        .catch(() => 'bad star wars API request');
-      }
-
-    }
+    var swroot = (body!==undefined && body.swroot) ? body.swroot : "people";
+    var swid = (body!==undefined && body.swid) ? body.swid+"/" : "";
+    var swurl = "http://swapi.co/api/"+swroot+"/"+swid;
+    console.log(swurl);
+    return axios.get(swurl)
+    .then(r => {
+      cache.data = r;
+      cache.timestamp = (new Date).getTime();
+      return r;
+    })
+    .catch(() => 'bad star wars API request');
   }
 };
